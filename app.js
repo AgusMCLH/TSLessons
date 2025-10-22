@@ -38,9 +38,43 @@ var __extends = (this && this.__extends) || (function () {
         return Avenger;
     }());
     var antman = new Avenger("Antman", "Avengers", "Scott Lang");
-    console.log(antman);
     antman.realName = "Scott Lang";
-    console.log(antman);
+})();
+(function () {
+    var Mutant = (function () {
+        function Mutant(name, team, realName) {
+            this.name = name;
+            this.team = team;
+            this.realName = realName;
+        }
+        return Mutant;
+    }());
+    var Xmen = (function (_super) {
+        __extends(Xmen, _super);
+        function Xmen() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Xmen.prototype.salvarMundo = function () {
+            return 'Mundo salvado!';
+        };
+        return Xmen;
+    }(Mutant));
+    var Villain = (function (_super) {
+        __extends(Villain, _super);
+        function Villain() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Villain.prototype.conquistarMundo = function () {
+            return 'Mundo conquistado!';
+        };
+        return Villain;
+    }(Mutant));
+    var wolverine = new Xmen('Logan', 'X-Men', 'James Howlett');
+    var magneto = new Villain('Magnus', 'Brotherhood', 'Erik Lehnsherr');
+    var getRealName = function (mutant) {
+    };
+    getRealName(wolverine);
+    getRealName(magneto);
 })();
 (function () {
     var Avenger = (function () {
@@ -48,7 +82,6 @@ var __extends = (this && this.__extends) || (function () {
             this.name = name;
             this.team = team;
             this.realName = realName;
-            console.log('Avanger creado: ', name);
         }
         Avenger.prototype.getFullName = function () {
             return "".concat(this.name, " (").concat(this.realName, ")");
@@ -60,12 +93,22 @@ var __extends = (this && this.__extends) || (function () {
         function Mutant(name, team, realName, power) {
             var _this = _super.call(this, name, team, realName) || this;
             _this.power = power;
-            console.log('Mutante creado: ', name);
             return _this;
         }
         return Mutant;
     }(Avenger));
-    var wolverine = new Mutant('Logan', 'X-Men', 'James Howlett', 'Regeneración');
-    console.log(wolverine);
+    var Xmen = (function (_super) {
+        __extends(Xmen, _super);
+        function Xmen() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Xmen.prototype.salvarMundo = function () {
+            return 'Mundo salvado!';
+        };
+        return Xmen;
+    }(Mutant));
+    var Ironman = new Avenger('Ironman', 'Avengers', 'Tony Stark');
+    var wolverine = new Xmen('Logan', 'X-Men', 'James Howlett', 'Regeneración');
+    var cyclops = new Mutant('Cíclope', 'X-Men', 'Scott Summers', 'Rayos Ópticos');
 })();
 //# sourceMappingURL=app.js.map

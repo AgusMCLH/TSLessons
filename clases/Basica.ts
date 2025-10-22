@@ -18,9 +18,9 @@
         }
     }
     const antman = new Avenger("Antman", "Avengers", "Scott Lang");
-    console.log(antman);
+    // console.log(antman);
     antman.realName = "Scott Lang";
 
-    console.log(antman);
+    // console.log(antman);
     
 })();
