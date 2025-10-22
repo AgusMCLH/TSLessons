@@ -77,6 +77,24 @@ var __extends = (this && this.__extends) || (function () {
     getRealName(magneto);
 })();
 (function () {
+    var apocalipsis = (function () {
+        function apocalipsis(nombre) {
+            this.nombre = nombre;
+        }
+        apocalipsis.llamarInstancia = function (nombre) {
+            if (!apocalipsis.instancia) {
+                apocalipsis.instancia = new apocalipsis(nombre || 'En Sabah Nur');
+            }
+            return apocalipsis.instancia;
+        };
+        return apocalipsis;
+    }());
+    var apocalipsisX = apocalipsis.llamarInstancia('Apocalipsis');
+    var apocalipsisY = apocalipsis.llamarInstancia('Otro nombre');
+    console.log(apocalipsisX);
+    console.log(apocalipsisY);
+})();
+(function () {
     var Avenger = (function () {
         function Avenger(name, team, realName) {
             this.name = name;
