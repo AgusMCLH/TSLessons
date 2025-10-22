@@ -1,15 +1,20 @@
 (() => {
     class Avenger {
-        private name: string;
-        public team: string;
-        public realName: string;
-        public nameSetter(value: string) {
-            this.name = value;
+
+        static staticVariable: string = "Hola mundo";
+
+        get nameGetter() {
+            return this.name;
         }
-        constructor(name: string = "", team: string = "", realName?: string ) {
-            this.name = name;
-            this.team = team;
-            this.realName = realName;
+
+        
+
+        public nameSetter(value: string): string {
+            this.name = value;
+            return this.name;
+        }
+        constructor(private name: string = "", public team: string = "", public realName?: string ) {
+
         }
     }
     const antman = new Avenger("Antman", "Avengers", "Scott Lang");
